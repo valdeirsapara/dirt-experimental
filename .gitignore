@@ -1,7 +1,8 @@
 ENV/
 
 node_modules/
-dist/css/*
+static/dist/css/*
 
 
 *.sqlite3
+*.pyc
