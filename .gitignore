@@ -1,0 +1,7 @@
+ENV/
+
+node_modules/
+dist/css/*
+
+
+*.sqlite3
