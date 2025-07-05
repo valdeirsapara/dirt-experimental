@@ -12,7 +12,7 @@ export default defineConfig({
   ],
   root: resolve('./www'),
   base: '/static/',
-  server: { host: 'localhost', port: 5173 },
+  server: { host: '0.0.0.0', port: 5173 },
     resolve: {
         alias: {
         '@': resolve('./www/src'),

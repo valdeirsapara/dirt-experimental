@@ -123,7 +123,7 @@ CSRF_COOKIE_NAME = 'XSRF-TOKEN'
 DJANGO_VITE_DEV_MODE = DEBUG
 DJANGO_VITE_ASSETS_PATH = BASE_DIR / 'www' / 'dist'
 DJANGO_VITE_DEV_SERVER_HOST = '127.0.0.1'
-DJANGO_VITE_PORT = 5173
+DJANGO_VITE_DEV_SERVER_PORT  = 5173  # Don't append any port since the proxy handling it
 
 
 # Static files (CSS, JavaScript, Images)
