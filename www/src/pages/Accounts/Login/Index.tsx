@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useForm } from '@inertiajs/react';
+import { BaseLayout } from "@/layouts/BaseLayout";
+import { useForm, usePage } from '@inertiajs/react';
 import { AlertCircleIcon } from "lucide-react";
 import { use, useEffect } from "react";
 import { toast } from "sonner";
@@ -35,30 +36,8 @@ export default function Index({message}: { message?: string }) {
       }
     });
   }
-
-  // Monitora erros de validação do backend
-  useEffect(() => {
-    if (errors.username || errors.password) {
-      toast("Erro de Login", {
-        description: "Verifique suas credenciais e tente novamente.",
-        style: { backgroundColor: '#dc2626', color: '#fff' },
-        icon: <AlertCircleIcon className="h-4 w-4 text-white" />,
-        duration: 4000,
-      });
-    }
-  }, [errors]);
-
-  useEffect(() => {
-    if (message) {
-      toast(message, {
-        style: { backgroundColor: '#1e293b', color: '#fff' },
-        icon: <AlertCircleIcon className="h-4 w-4 text-red-500" />,
-        duration: 3000,
-      });
-    }
-  }, [message]);
-
   return (
+    <BaseLayout title="Login">
     <main className="flex items-center justify-center h-screen w-screen bg-black">
       <div>
         <form onSubmit={handleSubmit}>
@@ -128,5 +107,6 @@ export default function Index({message}: { message?: string }) {
         </form>
       </div>
     </main>
+    </BaseLayout>
   );
 }

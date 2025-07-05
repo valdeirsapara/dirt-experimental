@@ -7,6 +7,7 @@ const pages = import.meta.glob('./pages/**/*.tsx');
 document.addEventListener('DOMContentLoaded', () => {
 
   createInertiaApp({
+    title: title => `${title} - My App`,
     resolve: async (name) => {
       const pagePath = `./pages/${name}.tsx`;
       const pageLoader = pages[pagePath];
@@ -19,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setup({ el, App, props }) {
       const root = createRoot(el);
       root.render(
-        <ThemeProvider  defaultTheme="dark" storageKey="vite-ui-theme">
-          <App {...props} />
-        </ThemeProvider>
+          <ThemeProvider  defaultTheme="dark" storageKey="vite-ui-theme">
+            <App {...props} />
+          </ThemeProvider>
 
     );
     }
